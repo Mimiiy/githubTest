@@ -2,9 +2,6 @@
 import python_tuorial as p
 import pytest
 
-def test_addition():
-    assert (5+7) == 12
-
 @pytest.mark.parametrize("weight, unit, con_weight", 
 [(69, "L", (69*2.205)), (69, "l", (69*2.205)), (69, "k", (69/2.205)),
 (69, "K", (69/2.205))])
