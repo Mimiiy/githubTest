@@ -1,6 +1,8 @@
 #library
-import basic_functions as b
 import pytest
+import basic_functions as b
+from math import pi
+
 
 @pytest.mark.parametrize("weight, unit, con_weight", 
 [(69, "L", (69*2.205)), (69, "l", (69*2.205)), (69, "k", (69/2.205)),
@@ -33,3 +35,11 @@ def test_area_triangle_ValueError(base, height):
 def test_area_triangle_TypeError(base, height):
     with pytest.raises(TypeError):
         b.area_triangle(base, height)
+
+@pytest.fixture
+def circle_fix():
+    return b.Circle(4)
+
+def test_circle(circle_fix):
+    assert circle_fix.area()== pi*(4**2)
+    assert circle_fix.perimeter() == 2*pi*4

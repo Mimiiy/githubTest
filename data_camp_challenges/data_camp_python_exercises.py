@@ -1,3 +1,4 @@
+import numpy as np
 
 #challenge 1: creating a list using range 
 x = [*range(0,11,2)]
@@ -11,9 +12,15 @@ enum_list = [(i,name) for (i,name) in enumerate(names, start =1)]
 print(range_list == enum_list)
 
 #challenge 3: Mapping 
+#convert all names to uppercases
+names_upper = [*map(str.upper, names)] #.upper() capitalizes all letters
+print(names_upper)
+
+nums2 = [[*range(1,6)], [*range(6,11)]]
+
+#challenge 4: Numpy
+nums2 = [*range(0,6), [*range(6,11)]]
+print(nums2)
 
 
-x = [5.7, 4.5]
-y = list(map(round, x))
-print(y)
 
