@@ -21,6 +21,7 @@ def get_users():
     else:
         raise requests.HTTPError
 
+#unit testing
 @mock.patch("requests.get")    
 def test_get_users(mock_get):
     mock_response = mock.Mock()
