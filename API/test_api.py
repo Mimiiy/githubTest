@@ -23,12 +23,20 @@ def get_users():
 
 #unit testing
 @mock.patch("requests.get")    
-def test_get_users(mock_get):
+def test_get_users_successful(mock_get):
     mock_response = mock.Mock()
     mock_response.status_code = 200
     mock_response.json.return_value = {"id": 1, "name": "Maryam"}
-    
     mock_get.return_value = mock_response
     data = get_users()
     assert data == {"id": 1, "name": "Maryam"}
+
+#This section is testing the for an unsucessful API call
+@mock.patch("requests.get")
+def test_get_users_error(mock_get):
+    mock_response = mock.Mock()
+    mock_response.status_code = 000
+    mock_get.return_value = mock_response
+    with pytest.raises(requests.HTTPError):
+        get_users()
 
