@@ -31,7 +31,7 @@ def test_get_users_successful(mock_get):
     data = get_users()
     assert data == {"id": 1, "name": "Maryam"}
 
-#This section is testing the for an unsucessful API call
+#This section is testing the for an unsuccessful API call
 @mock.patch("requests.get")
 def test_get_users_error(mock_get):
     mock_response = mock.Mock()
