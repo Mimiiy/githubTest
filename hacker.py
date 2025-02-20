@@ -1,5 +1,5 @@
 
-#challenge 1: Print the list of integers from  through  as a string, without spaces.
+#challenge 1: Print the list of integers as a string, without spaces.
 def main():
     x = int(input())
     y = return_sequence(x)
