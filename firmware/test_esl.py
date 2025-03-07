@@ -1,8 +1,7 @@
 
 import pytest
 from esl import * 
-
-
+    
 @pytest.mark.parametrize("id, version, status", 
                          [("1", "1.0.0", "offline"), 
                           ("3", "1.0.0", "offline"),

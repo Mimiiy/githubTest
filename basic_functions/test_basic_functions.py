@@ -36,10 +36,11 @@ def test_area_triangle_TypeError(base, height):
     with pytest.raises(TypeError):
         b.area_triangle(base, height)
 
-@pytest.fixture
-def circle_fix():
-    return b.Circle(4)
 
-def test_circle(circle_fix):
-    assert circle_fix.area()== pi*(4**2)
-    assert circle_fix.perimeter() == 2*pi*4
+@pytest.mark.parametrize("radius", [4,5])
+def test_circle( radius):
+    circle = b.Circle(radius)
+    assert circle.area()== pi*(radius**2)
+    assert circle.perimeter() == 2*pi*radius
+
+
